@@ -1,0 +1,27 @@
+{
+  "name": "iGlass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VariKXOFF/iGlass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VariKXOFF/iGlass/issues"
+  },
+  "homepage": "https://github.com/VariKXOFF/iGlass#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "less": "^4.1.1",
+    "less-middleware": "^3.1.0",
+    "pug": "^3.0.2"
+  }
+}
