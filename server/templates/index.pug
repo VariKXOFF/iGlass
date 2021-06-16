@@ -1,5 +1,80 @@
 doctype html
 html
     head
+        meta(charset="utf-8")
+        link(href='https://css.gg/css' rel='stylesheet')
         link(rel="stylesheet" href="/style.css")
+        title iGlass
     body
+        header.header
+            nav.navigation-mobile.navigation-mobile--visible
+                ul.navigation-mobile__list
+                    - let i = 0;
+                    - let link = ['О нас', 'Портфолио', 'Услуги', 'Контакты']
+                    while i < 4
+                        li.navigation-mobile__element.navigation-mobile__element--hover.navigation-mobile__element--active
+                            a.navigation-mobile__link= link[i]
+                            - i++
+                button.navigation-mobile__button.navigation-mobile__button--hover.navigation-mobile__button--active
+                    i(class="gg-close")
+            nav.navigation
+                ul.navigation__list.navigation__list--visible
+                    - i = 0
+                    while i < 4
+                        li.navigation__element
+                            a.navigation__link= link[i]
+                            - i++
+                button.navigation__button.navigation__button--hover.navigation__button--active
+                    i(class="gg-menu")
+        main.main
+            div.preview
+                    h2.preview__caption Коротко о нас
+                    p.preview__text Стекольная компания "iGlass" основана в 1998 году. На сегодняшний день компания занимает лидирующие позиции в области переработки и изготовления изделий из стекла и зеркал, а так же оптовой и розничной продаже стекла от 2-х до 19 мм различного типа и оттенков.
+                    p.preview__text Коллектив нашей компании трудится бок о бок уже не первый год. За годы своей работы мы завоевали не только репутацию надежного поставщика стекольной продукции, но и значительно увеличили масштабы своего производства, наполнив ассортимент новыми решениями и идеями для наших клиентов.
+            div.species-glass
+                h2.species-glass__caption Производство стекла
+                img(alt="Image" src="/imgs/steklo.png").species-glass__image
+                div.species-glass__container
+                    - i = 0;
+                    - let glass = ['Закаленное стекло', 'Прозрачное стекло', 'Триплекс стекло', 'Стекло Стемалит', 'Гнутое стекло', 'Витражное стекло', 'Цветное стекло', 'Бронированное стекло', 'Матовое стекло', 'Противопожарное стекло']
+                    while i < 10
+                        div.species-glass__element
+                            p.species-glass__text= glass[i]
+                            - i++
+            div.create
+                h2.create__caption Предлагаем монтаж стеклянных конструкций под ключ:
+                div.create__container
+                    - let image = ['create1', 'create2', 'create3', 'create4', 'create5', 'create6', 'create7', 'create8']
+                    - let text = ['Остекление домов', 'Остекление зданий', 'Остекление помещений', 'Остекление магазинов', 'Остекление лифтовых шахт', 'Остекление веранд', 'Остекление зимних садов', 'Остекление павильонов',]
+                    - i = 0
+                    while i < 8
+                        div.create__element
+                            img.create__image(alt=" " src=`/imgs/${image[i]}.png`)
+                            p.create__text= text[i]
+
+                            - i++
+            div.info
+                h2.info__caption Почему мы?
+                div.info__container
+                    - let infoImage = ['info1', 'info2', 'info3', 'info4', 'info5', 'info6', 'info7', 'info8']
+                    - let infoCaption = ['Отличные цены', 'Сроки', 'Производство', 'Доставка', 'Джамбо', 'Качество', 'Многофункциональность', 'Система скидок']
+                    - let infoText = ['Мы - производители. Это обеспечивает низкие цены на продукцию', 'Мы производим изделия в срок от 1 до 7 рабочих дней (в зависимости от вида изделий)', 'Все изделия изготавливаются на наших собственных производственных мощностях', 'У нас есть специальный транспорт, оборудованный для доставки стекла и зеркал', 'Для работы со стеклом у нас есть специальный джамбо-стол для резки стекла и триплекса', 'В производстве мы используем только стекло и зеркало наивысшего качества', 'У Вас есть возможность заказать все в одном месте', 'Для постоянных заказчиков у нас индивидуальные условия и система скидок']
+                    - i = 0
+                    while i < 8
+                        div.info__element
+                            img.info__image(alt=" " src=`/imgs/${infoImage[i]}.png`)
+                            h4.info__caption= infoCaption[i]
+                            p.info__text= infoText[i]
+                            - i++
+        footer.footer
+            img.footer__logo
+            div.footer__info
+                 - let footerImage = ['gg-edit-black-point', 'gg-phone', 'gg-phone']
+                 - let footerText = ['г. Москва, пр-т Волгоградский, д.47. Бизнес-центр "КУБ"', '+7(495)777-33-54', '8(800)775-53-18']
+                 - i = 0
+                 while i < 3
+                     div.footer__element
+                         i(class=`${footerImage[i]}`)
+                         p.footer__text= footerText[i]
+                         - i++
+    script(src="/js/script.js")

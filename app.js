@@ -1,17 +1,21 @@
 const express = require("express"),
 	  parser = require("body-parser").json(),
 	  lessMiddleware = require("less-middleware")
-	  app = express();
+	  app = express(),
+	  port = process.env.PORT || 5000;
 
 app.use(express.urlencoded(true));
 app.use(express.json());
 app.use(parser);
-app.use(express.static("./public"));
 app.use("/", require("./server/router"));
-app.use(lessMiddleware(__dirname + '/public'));
-
+app.use(lessMiddleware(__dirname + '/public/less', {
+	dest: __dirname + '/public',
+	debug: true,
+	force: true
+}));
+app.use(express.static("./public"));
 
 app.set("view engine", "pug");
 app.set("views", "./server/templates");
 
-app.listen(5000);
+app.listen(port);

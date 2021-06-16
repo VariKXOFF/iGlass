@@ -1,0 +1,81 @@
+@import "variables";
+@import "font";
+
+.header {
+  width: 100%;
+}
+.navigation-mobile {
+  width: inherit;
+  position: relative;
+
+  &__list {
+    width: inherit;
+  }
+  &__element {
+    width: inherit;
+    height: 50px;
+    background: @tertiary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: @text;
+    font-weight: 600;
+
+    &--hover:hover {
+      background: fade(@tertiary, 60%);
+    }
+    &--active:active {
+      background: fade(@tertiary, 30%);
+      color: fade(black, 70%)
+    }
+  }
+  &__element:not(:last-child) {
+    border-bottom: 0.5px solid fade(black, 50%);
+  }
+  &__element:not(:first-child) {
+    box-shadow: inset 0 1px 4px 0 fade(black, 30%);
+  }
+  &__button {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+
+    &--hover:hover {
+      color: fade(black, 70%)
+    }
+    &--active:active {
+      color: fade(black, 50%)
+    }
+  }
+}
+.navigation {
+  width: inherit;
+  height: 50px;
+  position: relative;
+  background: @secondary;
+
+  &__list {
+    width: inherit;
+    display: block;
+
+    &--visible {
+      display: none;
+    }
+  }
+  &__button {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: white;
+
+    &--hover:hover {
+      color: fade(white, 70%)
+    }
+    &--active:active {
+      color: fade(white, 50%)
+    }
+  }
+}
