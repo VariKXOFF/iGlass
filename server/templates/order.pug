@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(href='https://css.gg/css' rel='stylesheet')
+        link(rel="stylesheet" href="/style.css")
+        title Форма заказа
+    body
+        header.header
+            nav.navigation
+                img(src="imgs/logo.png" alt="logo").navigation__logo
+        main.main
+
+        footer#footer.footer
+            img.footer__logo(src="/imgs/logo.png" alt="logo")
+            div.footer__info
+                div.footer__element
+                    i(class="gg-edit-black-point")
+                    p.footer__text г. Москва, пр-т Волгоградский, д.47. Бизнес-центр "КУБ
+                - let footerImage = ['gg-phone', 'gg-phone']
+                - let footerText = ['+7(495)777-33-54', '8(800)775-53-18']
+                - i = 0
+                while i < 2
+                    div.footer__element
+                        i(class=`${footerImage[i]}`)
+                        p.footer__text
+                            a(class='footer__link' href=`tel:${footerText[i]}`)= footerText[i]
+                            - i++

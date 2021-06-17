@@ -4,6 +4,7 @@
 .main {
   width: 100%;
   margin-top: 20px;
+  min-height: 100vh;
 }
 .preview {
   width: calc(100% - 40px);
@@ -169,9 +170,10 @@
       flex-wrap: wrap;
       height: 230px;
       gap: 5px;
+      align-content: center;
     }
     &__element {
-      width: 50%;
+      width: 300px;
     }
     &__caption {
       text-align: center;
@@ -192,6 +194,7 @@
       align-items: center;
       flex-wrap: wrap;
       height: 1000px;
+      align-content: center;
     }
     &__element {
       width: 300px;
@@ -208,7 +211,7 @@
 
     &__container {
       width: 100%;
-      align-items: center;
+      align-content: center;
       flex-wrap: wrap;
       height: 1000px;
     }
