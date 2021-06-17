@@ -11,7 +11,62 @@ html
             nav.navigation
                 img(src="imgs/logo.png" alt="logo").navigation__logo
         main.main
-
+            form.form
+                div.glass
+                    - let i = 0
+                    - let glass = ['Закаленное стекло', 'Прозрачное стекло', 'Триплекс стекло', 'Стекло Стемалит', 'Гнутое стекло', 'Витражное стекло', 'Бронированное стекло', 'Матовое стекло', 'Противопожарное стекло', 'Двухслойное стекло', 'Цветное стекло', 'Тонированное стекло']
+                    while i < 10
+                        div.glass__element
+                            label.glass__label
+                                input.glass__input(type="radio" name="species")
+                                = glass[i]
+                                - i++
+                    div.glass__element
+                        label.glass__label
+                            input.glass__input#color(type="radio" name="species")
+                            = glass[10]
+                    div.glass__element
+                        label.glass__label
+                            input.glass__input#toning(type="radio" name="species")
+                            = glass[11]
+                    div.glass__toning
+                        label.glass__toning-label Введите процент тонировки:
+                            input.glass__toning-input(type="number" name="toning" value="1" min="1" max="100")
+                    div.glass__color
+                        label.glass__color-label Выберите цвет стекла:
+                            input.glass__color-input(type="color", name="color" value="#defabb")
+                    button.next Продолжить
+                div.glass-size
+                    label.glass-size__label Толщина (в мм.)
+                        input.glass-size__input(type="number" name="weight" min="3" max="20")
+                    label.glass-size__label Форма
+                        select(name="format")
+                            option(value="square" selected) Прямоугольное
+                            option(value="figure") Фигура
+                            option(value="circle") Круглое
+                    label.glass-size__label Ширина (в мм.)
+                        input.glass-size__input(type="number" name="width" min="120" max="3200")
+                    label.glass-size__label Высота (в мм.)
+                        input.glass-size__input(type="number" name="height" min="120" max="3200")
+                    button.next Продолжить
+                div.glass-additive
+                    label Кол-во отверстий
+                        select
+                            - i = 0
+                            while i <= 10
+                                option= i++
+                    label Диаметр
+                        input(type="number" name="toning" min="1" max="100")
+                    label Кол-во вырезов
+                        select
+                            - i = 0
+                            while i <= 10
+                                option= i++
+                    label Полировка
+                        input(type="checkbox" name="toning" min="1" max="100")
+                    label Шлифовка
+                        input(type="checkbox" name="toning" min="1" max="100")
+                    button.next Отправить
         footer#footer.footer
             img.footer__logo(src="/imgs/logo.png" alt="logo")
             div.footer__info
@@ -27,3 +82,4 @@ html
                         p.footer__text
                             a(class='footer__link' href=`tel:${footerText[i]}`)= footerText[i]
                             - i++
+        script(src="/js/form.js")
