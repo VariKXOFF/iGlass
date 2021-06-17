@@ -14,6 +14,7 @@ app.use(lessMiddleware(__dirname + '/public/less', {
 	force: true
 }));
 app.use(express.static("./public"));
+app.use("/api", require("./api/api"))
 
 app.set("view engine", "pug");
 app.set("views", "./server/templates");
