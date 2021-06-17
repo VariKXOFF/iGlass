@@ -20,11 +20,15 @@ html
                     i(class="gg-close")
             nav.navigation
                 ul.navigation__list.navigation__list--visible
-                    - i = 0
-                    while i < 4
-                        li.navigation__element
-                            a.navigation__link= link[i]
-                            - i++
+                    li.navigation__element.navigation__element--hover.navigation__element--active
+                        a.navigation__link.navigation__link--hover.navigation__link--active О нас
+                    li.navigation__element.navigation__element--hover.navigation__element--active
+                        a.navigation__link.navigation__link--hover.navigation__link--active Портфолио
+                ul.navigation__list.navigation__list--visible
+                    li.navigation__element.navigation__element--hover.navigation__element--active
+                        a.navigation__link.navigation__link--hover.navigation__link--active Услуги
+                    li.navigation__element.navigation__element--hover.navigation__element--active
+                        a.navigation__link.navigation__link--hover.navigation__link--active Контакты
                 img(src="imgs/logo.png" alt="logo").navigation__logo
                 button.navigation__button.navigation__button--hover.navigation__button--active
                     i(class="gg-menu")
