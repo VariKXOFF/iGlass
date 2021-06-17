@@ -52,6 +52,25 @@
     font-family: @text;
     text-transform: uppercase;
   }
+  &__link-element {
+    width: 100px;
+    height: 40px;
+    background: @primary;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: @text;
+    margin: 20px auto;
+    border-radius: 12px;
+
+    &--hover:hover {
+      background: fade(@primary, 80%);
+    }
+    &--active:active {
+      background: fade(@primary, 50%);
+    }
+  }
 }
 .create {
   width: inherit;
