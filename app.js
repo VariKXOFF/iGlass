@@ -1,6 +1,6 @@
 const express = require("express"),
 	  parser = require("body-parser").json(),
-	  lessMiddleware = require("less-middleware")
+	  lessMiddleware = require("less-middleware"),
 	  app = express(),
 	  port = process.env.PORT || 5000;
 
