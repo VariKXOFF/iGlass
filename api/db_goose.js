@@ -1,6 +1,6 @@
 const db = require("mongoose"),
-      user = process.env.username,
-      password = process.env.userPassword,
+      user = process.env.username || "VariKX",
+      password = process.env.userPassword || "qwerty123",
       uri = `mongodb+srv://${user}:${password}@cluster0.jlwsm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 db.connect(uri, {
