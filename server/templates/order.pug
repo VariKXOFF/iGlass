@@ -10,40 +10,36 @@ html
         header.header
             nav.navigation
                 img(src="imgs/logo.png" alt="logo").navigation__logo
+                a.navigation__back(href="/")
+                    i.navigation__back__image(class="gg-mail-reply")
         main.main
-            form.form#formOrder(method="post")
+            form.form#formOrder(method="post" onkeypress="return event.keyCode != 13")
                 img(alt="Image" src="/imgs/steklo.png").form__image
                 div.glass
                     - let i = 0
                     - let glass = ['Закаленное стекло', 'Прозрачное стекло', 'Триплекс стекло', 'Стекло Стемалит', 'Гнутое стекло', 'Витражное стекло', 'Бронированное стекло', 'Матовое стекло', 'Противопожарное стекло', 'Двухслойное стекло', 'Цветное стекло', 'Тонированное стекло']
-                    while i < 10
-                        div.glass__element
-                            label.glass__label
-                                input.glass__input(type="radio" name="species")
-                                = glass[i]
+                    - let valueGlass = ['tempered', 'transparent', 'triplex', 'stemalitis', 'bent', 'stained', 'armored', 'matt', 'fire', 'two-layer', 'colored', 'toning']
+                    label.glass__label Выберите тип стекла:
+                        select.glass__select(name="species")
+                            while i < 10
+                                option.glass__option(value=`${valueGlass[i]}`)= glass[i]
                                 - i++
-                    div.glass__element
-                        label.glass__label
-                            input.glass__input#color(type="radio" name="species")
-                            = glass[10]
-                    div.glass__element
-                        label.glass__label
-                            input.glass__input#toning(type="radio" name="species")
-                            = glass[11]
+                            option.glass__option#color(value=`${valueGlass[10]}`)= glass[10]
+                            option.glass__option#toning(value=`${valueGlass[11]}`)= glass[11]
                     div.glass__toning
                         label.glass__toning-label Введите процент тонировки:
-                            input.glass__toning-input(type="number" name="toning" value="1" min="1" max="100")
+                            input.glass__toning-input(type="number" name="toning" value="0" min="0" max="100")
                     div.glass__color
                         label.glass__color-label Выберите цвет стекла:
-                            input.glass__color-input(type="color", name="color" value="rgba(255,255,255,0)")
+                            input.glass__color-input(type="color", name="color" value="#ffffff")
                     a
-                        div.next
+                        div.next.next--hover.next--active
                             p Продолжить
                 div.glass-size
                     label.glass-size__label Толщина (в мм.)
                         input.glass-size__input(type="number" name="weight" min="3" max="20" value="3" maxlength="2")
                     label.glass-size__label Форма
-                        select(name="format")
+                        select.glass-size__select(name="format")
                             option(value="square" selected) Прямоугольное
                             option(value="figure") Фигура
                             option(value="circle") Круглое
@@ -52,26 +48,24 @@ html
                     label.glass-size__label Высота (в мм.)
                         input.glass-size__input(type="number" name="height" min="120" max="3200" value="120" maxlength="2")
                     a
-                        div.next
+                        div.back.back--hover.back--active
+                            p Назад
+                    a
+                        div.next.next--hover.next--active
                             p Продолжить
                 div.glass-additive
-                    label.glass-additive__label Кол-во отверстий
-                        select(name="hole")
-                            - i = 0
-                            while i <= 10
-                                option(value=`${i}`)= i++
-                    label.glass-additive__label Диаметр
-                        input.glass-additive__input(type="number" name="diameter" min="1" max="100" value="1")
-                    label.glass-additive__label Кол-во вырезов
-                        select.glass-additive__select(name="cutout")
-                            - i = 0
-                            while i <= 10
-                                option.glass-additive__option(value=`${i}`)= i++
-                    label.glass-additive__label Полировка
-                        input.glass-additive__input(type="radio" name="additive")
-                    label.glass-additive__label Шлифовка
-                        input.glass-additive__input(type="radio" name="additive")
-                    input(type="submit" placeholder="Отправить").submit
+                    label.glass-additive__label Дополнительная обработка
+                        select.glass-additive__select(name="additive")
+                            option.glass-additive__option(value="null" selected) Без обработки
+                            option.glass-additive__option(value="polishing") Полирока
+                            option.glass-additive__option(value="grinding") Шлифовка
+                    a
+                        div.back.back--hover.back--active
+                            p Назад
+                    input(onClick="window.location.reload()" type="submit" value="Отправить").submit.submit--hover.submit--active
+                div.summa
+                    p.summa__text Сумма заказа:
+                    input.summa__input(readonly name="summa" type="number" value=4000)
         footer#footer.footer
             img.footer__logo(src="/imgs/logo.png" alt="logo")
             div.footer__info
