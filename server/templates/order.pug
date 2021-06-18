@@ -13,7 +13,7 @@ html
                 a.navigation__back(href="/")
                     i.navigation__back__image(class="gg-mail-reply")
         main.main
-            form.form#formOrder(method="post")
+            form.form#formOrder(method="post" onkeypress="return event.keyCode != 13")
                 img(alt="Image" src="/imgs/steklo.png").form__image
                 div.glass
                     - let i = 0
@@ -33,7 +33,7 @@ html
                         label.glass__color-label Выберите цвет стекла:
                             input.glass__color-input(type="color", name="color" value="#ffffff")
                     a
-                        div.next
+                        div.next.next--hover.next--active
                             p Продолжить
                 div.glass-size
                     label.glass-size__label Толщина (в мм.)
@@ -48,10 +48,10 @@ html
                     label.glass-size__label Высота (в мм.)
                         input.glass-size__input(type="number" name="height" min="120" max="3200" value="120" maxlength="2")
                     a
-                        div.back
+                        div.back.back--hover.back--active
                             p Назад
                     a
-                        div.next
+                        div.next.next--hover.next--active
                             p Продолжить
                 div.glass-additive
                     label.glass-additive__label Кол-во отверстий
@@ -72,9 +72,12 @@ html
                             option.glass-additive__option(value="polishing") Полирока
                             option.glass-additive__option(value="grinding") Шлифовка
                     a
-                        div.back
+                        div.back.back--hover.back--active
                             p Назад
-                    input(type="submit" value="Отправить").submit
+                    input(onClick="window.location.reload()" type="submit" value="Отправить").submit.submit--hover.submit--active
+                div.summa
+                    p.summa__text Сумма заказа:
+                    input.summa__input(readonly name="summa" type="number" value=1000)
         footer#footer.footer
             img.footer__logo(src="/imgs/logo.png" alt="logo")
             div.footer__info

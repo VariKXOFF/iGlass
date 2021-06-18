@@ -1,28 +1,64 @@
 let glassInput = document.querySelectorAll('.glass__input'),
-    colorInput = document.querySelector('.glass__color'),
-    toningInput = document.querySelector('.glass__toning'),
+    colorBlock = document.querySelector('.glass__color'),
+    toningBlock = document.querySelector('.glass__toning'),
+    toningInput = document.querySelector('.glass__toning-input')
     glass = document.querySelector('.glass'),
     glassSize = document.querySelector('.glass-size'),
     glassAdditive = document.querySelector('.glass-additive'),
     next = document.querySelectorAll('.next'),
     submit = document.querySelector('.submit'),
     select = document.querySelector('.glass__select'),
-    back = document.querySelectorAll('.back');
+    back = document.querySelectorAll('.back'),
+    summa = document.querySelector('.summa__input');
 
 select.addEventListener("change", e => {
     if(select.value === "colored") {
-        colorInput.style.display = "flex"
-        if (toningInput.style.display === "flex") {
-            toningInput.style.display = "none"
+        colorBlock.style.display = "flex"
+        if(summa.value === 1000) {
+            summa.value = +summa.value + 2000
+        } else {
+            summa.value = 1000
+            summa.value = +summa.value + 2000
+        }
+        if (toningBlock.style.display === "flex") {
+            toningBlock.style.display = "none"
         }
     } else if (select.value === "toning") {
-        toningInput.style.display = "flex"
-        if (colorInput.style.display === "flex") {
-            colorInput.style.display = "none"
+        toningBlock.style.display = "flex"
+        toningInput.value = 1
+        if(summa.value === 1000) {
+            summa.value = +summa.value + 1500
+        } else {
+            summa.value = 1000
+            summa.value = +summa.value + 1500
+        }
+        if (colorBlock.style.display === "flex") {
+            colorBlock.style.display = "none"
         }
     } else {
-        colorInput.style.display = "none"
-        toningInput.style.display = "none"
+        colorBlock.style.display = "none"
+        toningBlock.style.display = "none"
+        if(summa.value === 1000) {
+            summa.value = +summa.value + 3000
+        } else {
+            summa.value = 1000
+            summa.value = +summa.value + 3000
+        }
+    }
+})
+
+toningInput.addEventListener("change", e => {
+    if(toningInput.value > 100) {
+        toningInput.value = 100
+    }
+    if(toningInput.value < 0) {
+        toningInput.value = 0
+    }
+    if(summa.value !== 2500) {
+        summa.value = 2500
+        summa.value = +summa.value + (+toningInput.value * 8)
+    } else {
+        summa.value = +summa.value + (+toningInput.value * 8)
     }
 })
 

@@ -11,7 +11,8 @@ const OrderSchema = new db.Schema({
     hole: Number,
     diameter: Number,
     cutout: Number,
-    additive: String
+    additive: String,
+    summa: Number
 });
 
 const Order = db.model("orders", OrderSchema)

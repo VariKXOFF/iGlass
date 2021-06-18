@@ -328,6 +328,13 @@
   text-transform: uppercase;
   background: @primary;
   font-family: @text;
+
+  &--hover:hover {
+    background: fade(@primary, 80%);
+  }
+  &--active:active {
+    background: fade(@primary, 50%);
+  }
 }
 .next, .back {
   display: flex;
@@ -372,5 +379,32 @@
   }
   &__select {
     font-family: @text;
+  }
+}
+.next {
+  margin-bottom: 30px;
+}
+.submit {
+  margin-bottom: 30px;
+}
+.summa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 100px;
+  box-sizing: border-box;
+  gap: 3px;
+
+  &__text {
+    font-family: @text;
+    font-size: 16px;
+  }
+  &__input {
+    display: flex;
+    width: initial;
+    font-family: @text;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: none;
   }
 }
