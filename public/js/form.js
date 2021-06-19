@@ -11,11 +11,10 @@ let back = document.querySelectorAll('.back');
 let summa = document.querySelector('.summa__input');
 let glassSizeInput = document.querySelectorAll('.glass-size__input');
 let selectGlassSize = document.querySelector('.glass-size__select')
-let selectGlassAdditive = document.querySelector('.glass-additive__select')
+let selectGlassAdditive = document.querySelector('.glass-additive__select');
 
 let countToningGlobal = 0
 let actualSumma = 0
-
 
 selectGlassSpecies.addEventListener("change", e => {
     if(selectGlassSpecies.value === "colored") {
@@ -194,3 +193,13 @@ for(let i = 0; i < next.length; i++) {
         })
     }
 }
+const addForm = document.forms.formOrder;
+addForm.addEventListener("submit", e => {
+    e.preventDefault();
+    for (let i = 0; i < e.target.elements.length; i++) {
+        let el = e.target.elements[i];
+        if (el.name) {
+            localStorage.setItem(`${el.name}`, el.value);
+        }
+    }
+})

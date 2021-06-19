@@ -10,7 +10,6 @@ const send = async (body) => {
     let data = await res.json()
 }
 const addForm = document.forms.formOrder;
-const resultBlock = addForm.nextElementSibling;
 addForm.addEventListener("submit", e => {
     e.preventDefault();
     let body = {};

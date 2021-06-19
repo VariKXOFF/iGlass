@@ -16,10 +16,11 @@ html
             form.form#formOrder(method="post" onkeypress="return event.keyCode != 13")
                 img(alt="Image" src="/imgs/steklo.png").form__image
                 div.glass
+                    h2.glass__caption Виды стекол
                     - let i = 0
                     - let glass = ['Закаленное стекло', 'Прозрачное стекло', 'Триплекс стекло', 'Стекло Стемалит', 'Гнутое стекло', 'Витражное стекло', 'Бронированное стекло', 'Матовое стекло', 'Противопожарное стекло', 'Двухслойное стекло', 'Цветное стекло', 'Тонированное стекло']
                     - let valueGlass = ['tempered', 'transparent', 'triplex', 'stemalitis', 'bent', 'stained', 'armored', 'matt', 'fire', 'two-layer', 'colored', 'toning']
-                    label.glass__label Выберите тип стекла:
+                    label.glass__label Выберите вид стекла:
                         select.glass__select(name="species")
                             while i < 10
                                 option.glass__option(value=`${valueGlass[i]}`)= glass[i]
@@ -36,6 +37,7 @@ html
                         div.next.next--hover.next--active
                             p Продолжить
                 div.glass-size
+                    h2.glass-size__caption Размер стекла
                     label.glass-size__label Толщина (в мм.)
                         input.glass-size__input(type="number" name="weight" min="3" max="20" value="3" maxlength="2")
                     label.glass-size__label Форма
@@ -54,7 +56,8 @@ html
                         div.next.next--hover.next--active
                             p Продолжить
                 div.glass-additive
-                    label.glass-additive__label Дополнительная обработка
+                    h2.glass-additive__caption Дополнительная обработка
+                    label.glass-additive__label
                         select.glass-additive__select(name="additive")
                             option.glass-additive__option(value="null" selected) Без обработки
                             option.glass-additive__option(value="polishing") Полирока
@@ -82,4 +85,3 @@ html
                             a(class='footer__link' href=`tel:${footerText[i]}`)= footerText[i]
                             - i++
         script(src="/js/form.js")
-        script(src="/js/send.js")
