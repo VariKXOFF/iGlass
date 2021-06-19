@@ -1,0 +1,41 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(href='https://css.gg/css' rel='stylesheet')
+        link(rel="stylesheet" href="/style.css")
+        title Форма заказа
+    body
+        header.header
+            nav.navigation
+                img(src="imgs/logo.png" alt="logo").navigation__logo
+                a.navigation__back(href="/")
+                    i.navigation__back__image(class="gg-mail-reply")
+        main
+            div.offer
+                h2.offer__caption Ваш заказ
+                div.offer__container
+                div.offer__glass
+                    h2.offer__caption Ваше стекло
+                    img.offer__image(alt="Image" src="/imgs/steklo.png")
+                div.offer__summa-container
+                    p.offer__summa-text Сумма заказа:
+                    p.offer__summa
+                a.payment__link
+                    div.payment Оплатить
+        footer.footer
+            div.footer__info
+                div.footer__element
+                    i(class="gg-edit-black-point")
+                    p.footer__text г. Москва, пр-т Волгоградский, д.47. Бизнес-центр "КУБ
+                - let footerImage = ['gg-phone', 'gg-phone']
+                - let footerText = ['+7(495)777-33-54', '8(800)775-53-18']
+                - i = 0
+                while i < 2
+                    div.footer__element
+                        i(class=`${footerImage[i]}`)
+                        p.footer__text
+                            a(class='footer__link' href=`tel:${footerText[i]}`)= footerText[i]
+                            - i++
+        script(src="/js/offer.js")

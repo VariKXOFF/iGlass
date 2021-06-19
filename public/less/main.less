@@ -227,6 +227,7 @@
   text-transform: uppercase;
   background: @primary;
   font-family: @text;
+  border-radius: 12px;
 
   &--hover:hover {
     background: fade(@primary, 80%);
@@ -286,7 +287,7 @@
   }
   &__select {
     font-family: @text;
-    width: 20 0px;
+    width: 200px;
     height: 40px;
   }
 }
@@ -302,7 +303,7 @@
   align-items: center;
   box-sizing: border-box;
   gap: 3px;
-  padding-left: 15pxx;
+  padding-left: 15px;
 
   &__text {
     width: 100px;
@@ -319,6 +320,69 @@
   }
 }
 
+// OFFER BLOCK
+
+.offer {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  &__caption {
+    font-family: @caption;
+    font-size: 19px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 30px;
+  }
+
+  &__element {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__textOrder, &__textOffer {
+    font-family: @text;
+    font-size: 17px;
+  }
+
+  &__glass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  &__summa-container {
+    padding: 50px 0;
+    display: flex;
+    gap: 5px;
+    font-family: @text;
+    font-size: 21px;
+  }
+}
+.payment {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: @text;
+  border-radius: 12px;
+  background: @primary;
+  color: #fff;
+}
+.color {
+  width: 10px;
+  height: 10px;
+}
 @media (min-width: @tablet-width) {
   .preview {
 
@@ -344,8 +408,8 @@
       text-align: center;
     }
     &__image {
-      width: 250px;
-      height: 250px;
+      width: 200px;
+      height: 200px;
     }
     &__link-element {
       width: 200px;
@@ -389,7 +453,7 @@
     padding: 50px 0;
 
     &__image {
-      width: 450px;
+      width: 270px;
     }
   }
   .glass {
@@ -445,6 +509,7 @@
     }
     &__select {
       font-size: 16px;
+      width: 300px;
     }
   }
   .summa {

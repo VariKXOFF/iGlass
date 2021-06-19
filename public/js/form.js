@@ -11,7 +11,7 @@ let back = document.querySelectorAll('.back');
 let summa = document.querySelector('.summa__input');
 let glassSizeInput = document.querySelectorAll('.glass-size__input');
 let selectGlassSize = document.querySelector('.glass-size__select')
-let selectGlassAdditive = document.querySelector('.glass-additive__select');
+// let selectGlassAdditive = document.querySelector('.glass-additive__select');
 
 let countToningGlobal = 0
 let actualSumma = 0
@@ -145,27 +145,27 @@ selectGlassSize.addEventListener("change", e => {
     }
 })
 
-selectGlassAdditive.addEventListener("change", e => {
-    if(selectGlassAdditive.value === "polishing") {
-        if(summa.value !== actualSumma) {
-            summa.value = actualSumma
-            summa.value = +summa.value + 10000
-        } else {
-            summa.value = +summa.value + 10000
-        }
-    } else if (selectGlassAdditive.value === "grinding") {
-        if(summa.value !== actualSumma) {
-            summa.value = actualSumma
-            summa.value = +summa.value + 5000
-        } else {
-            summa.value = +summa.value + 5000
-        }
-    } else {
-        if(summa.value !== actualSumma) {
-            summa.value = actualSumma
-        }
-    }
-})
+// selectGlassAdditive.addEventListener("change", e => {
+//     if(selectGlassAdditive.value === "polishing") {
+//         if(summa.value !== actualSumma) {
+//             summa.value = actualSumma
+//             summa.value = +summa.value + 10000
+//         } else {
+//             summa.value = +summa.value + 10000
+//         }
+//     } else if (selectGlassAdditive.value === "grinding") {
+//         if(summa.value !== actualSumma) {
+//             summa.value = actualSumma
+//             summa.value = +summa.value + 5000
+//         } else {
+//             summa.value = +summa.value + 5000
+//         }
+//     } else {
+//         if(summa.value !== actualSumma) {
+//             summa.value = actualSumma
+//         }
+//     }
+// })
 
 for(let i = 0; i < next.length; i++) {
     if(i === 0) {

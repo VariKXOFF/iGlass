@@ -6,6 +6,9 @@ router.get("/", (req, res) => {
 router.get("/order", (req, res) => {
 	res.render('order')
 })
+router.get("/offer", (req, res) => {
+	res.render("offer")
+})
 
 
 module.exports = router;
