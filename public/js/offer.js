@@ -3,7 +3,8 @@ let classElement = "offer__element"
 let classTextOffer = "offer__textOffer"
 let classTextOrder = "offer__textOrder"
 let summa = document.querySelector('.offer__summa')
-let.
+let payment = document.querySelector('.payment')
+
 
 let offerText = ['Сумма: ', 'Ширина: ', 'Процент тонировки: ', 'Дополнительная обработка: ', 'Формат стекла: ', 'Толщина: ', 'Цвет: ', 'Вид стекла: ', 'Высота: ']
 
@@ -52,3 +53,26 @@ for(let i = 0; i < localStorage.length; i++) {
         }
     }
 }
+
+let elementOffer = document.querySelectorAll(`.${classTextOffer}`)
+let elementOrder = document.querySelectorAll(`.${classTextOrder}`)
+let arrayOffer = []
+
+for(let i = 0; i < elementOffer.length; i++){
+    arrayOffer.unshift(elementOffer[i].innerHTML + elementOrder[i].innerHTML)
+}
+
+let amount = localStorage.getItem(localStorage.key(0))
+
+let pay = function () {
+    let widget = new cp.CloudPayments();
+    widget.pay('auth', // или 'charge'
+        { //options
+            publicId: 'test_api_00000000000000000000001',
+            description: 'Оплата товаров в iglass-ithub.herokuapp.com',
+            amount: +amount , //сумма
+            currency: 'RUB', //валюта
+            skin: "modern"
+        })
+}
+payment.addEventListener("click", pay)

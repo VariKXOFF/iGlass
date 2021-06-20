@@ -6,6 +6,7 @@ html
         link(href='https://css.gg/css' rel='stylesheet')
         link(rel="stylesheet" href="/style.css")
         title Форма заказа
+        script(src="https://widget.cloudpayments.ru/bundles/cloudpayments")
     body
         header.header
             nav.navigation
@@ -22,8 +23,8 @@ html
                 div.offer__summa-container
                     p.offer__summa-text Сумма заказа:
                     p.offer__summa
-                a.payment__link
-                    div.payment Оплатить
+                a.payment
+                    div.payment__element Оплатить
         footer.footer
             div.footer__info
                 div.footer__element
