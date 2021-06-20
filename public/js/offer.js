@@ -64,6 +64,7 @@ for(let i = 0; i < elementOffer.length; i++){
 
 let amount = localStorage.getItem(localStorage.key(0))
 
+
 let pay = function () {
     let widget = new cp.CloudPayments();
     widget.pay('auth', // или 'charge'
@@ -75,4 +76,6 @@ let pay = function () {
             skin: "modern"
         })
 }
-payment.addEventListener("click", pay)
+payment.addEventListener("click", e => {
+    pay()
+})
