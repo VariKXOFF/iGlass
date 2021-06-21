@@ -378,6 +378,13 @@
   border-radius: 12px;
   background: @primary;
   color: #fff;
+
+  &--hover:hover {
+    background: fade(@primary, 80%);
+  }
+  &--active:active {
+    background: fade(@primary, 50%);
+  }
 }
 .color {
   width: 10px;

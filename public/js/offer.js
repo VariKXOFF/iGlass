@@ -8,7 +8,9 @@ let payment = document.querySelector('.payment')
 
 let offerText = ['Сумма: ', 'Ширина: ', 'Процент тонировки: ', 'Дополнительная обработка: ', 'Формат стекла: ', 'Толщина: ', 'Цвет: ', 'Вид стекла: ', 'Высота: ']
 
-
+if(localStorage.length < 1) {
+    document.location.replace('/order')
+}
 
 for(let i = 0; i < localStorage.length; i++) {
 
