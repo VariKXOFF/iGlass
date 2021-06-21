@@ -23,8 +23,8 @@ html
                 div.offer__summa-container
                     p.offer__summa-text Сумма заказа:
                     p.offer__summa
-                a.payment
-                    div.payment__element.payment__element--hover.payment__element--active Оплатить
+                form(method="POST")
+                    input(type="submit" value="Оплатить").payment.payment--hover.payment--active
         footer.footer
             div.footer__info
                 div.footer__element

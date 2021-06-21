@@ -68,15 +68,28 @@ let amount = localStorage.getItem(localStorage.key(0))
 
 let pay = function () {
     let widget = new cp.CloudPayments();
-    widget.pay('auth', // или 'charge'
-        { //options
-            publicId: 'test_api_00000000000000000000001',
-            description: 'Оплата товаров в iglass-ithub.herokuapp.com',
-            amount: +amount , //сумма
-            currency: 'RUB', //валюта
-            skin: "modern"
+    widget.pay('auth', {
+        publicId: 'test_api_00000000000000000000001',
+        description: 'Оплата товаров в iglass-ithub.herokuapp.com',
+        amount: +amount ,
+        currency: 'RUB',
+        skin: "modern"
         })
 }
+
+    const send = async(element) => {
+        let res = await fetch("/offer", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(element)
+        })
+    }
+
 payment.addEventListener("click", e => {
     pay()
+    let msg = {msg: "Привет"}
+    send(msg)
 })
