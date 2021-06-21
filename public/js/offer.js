@@ -62,8 +62,11 @@ for(let i = 0; i < elementOffer.length; i++){
     arrayOffer.unshift(elementOffer[i].innerHTML + elementOrder[i].innerHTML)
 }
 
-let amount = localStorage.getItem(localStorage.key(0))
+// let amount = localStorage.getItem(localStorage.key(0))
+let amount
+for(let i = 0; i < localStorage.length; i++) {
 
+}
 
 let pay = function () {
     let widget = new cp.CloudPayments();
